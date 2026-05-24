@@ -6,7 +6,7 @@ import (
 	"time"
 )
 
-	// ฟังก์ชันสำหรับ Worker แต่ละตัว
+	// ฟังก์ชันสำหรับ Worker แต่ละตัว รับงาน
 func worker(id int, jobs <-chan int, wg *sync.WaitGroup) {
 	// บอก WaitGroup ว่าถ้าฟังก์ชันนี้จบ (return) ให้ลดค่า Counter ลง
 	defer wg.Done()
