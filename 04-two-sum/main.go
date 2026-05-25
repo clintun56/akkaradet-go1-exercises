@@ -1,5 +1,5 @@
 package basicconcurrencyworkerpool
-
+// ใช้ในการเปรียบเทียบข้อมูล ที่มีอยู่
 import "fmt"
 
 func TwoSum(nums []int, target int) []int {
