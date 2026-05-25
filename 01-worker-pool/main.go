@@ -1,5 +1,5 @@
 package basicconcurrencyworkerpool
-
+// จัดการการรับงานของพนักงานคือจำนวนพนักงานและจำนวนงาน
 import (
 	"fmt"
 	"sync"
