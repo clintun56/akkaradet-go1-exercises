@@ -11,7 +11,7 @@ type SafeCounter struct {
 	count int
 }
 
-// Inc เพิ่มค่า count ทีละ 1
+// Inc เพิ่มค่า count ทีละ 1 ทำงาน
 func (c *SafeCounter) Inc() {
 	// ล็อค Mutex ก่อนเข้าถึงข้อมูล
 	c.mu.Lock()
@@ -21,7 +21,7 @@ func (c *SafeCounter) Inc() {
 	c.count++
 }
 
-// Value คืนค่า count ปัจจุบัน
+// Value คืนค่า count ปัจจุบัน แสดง
 func (c *SafeCounter) Value() int {
 	c.mu.Lock()
 	defer c.mu.Unlock()
