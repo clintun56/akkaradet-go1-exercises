@@ -1,5 +1,5 @@
 package basicconcurrencyworkerpool
-
+// จัดการการใช้งานพร้อมกันหลายๆตัวเช่นการกดไลค์หลายๆเครื่องพร้อมกัน
 import (
 	"fmt"
 	"sync"
