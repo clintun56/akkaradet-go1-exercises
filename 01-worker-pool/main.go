@@ -1,5 +1,6 @@
 package basicconcurrencyworkerpool
 // จัดการการรับงานของพนักงานคือจำนวนพนักงานและจำนวนงาน
+// Worker Pool = "การตั้งหน้าตั้งตารอคิวทำงาน"
 import (
 	"fmt"
 	"sync"
