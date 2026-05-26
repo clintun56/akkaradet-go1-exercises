@@ -1,5 +1,9 @@
 package basicconcurrencyworkerpool
-
+// ด่านตรวจของ API (Request Validation Pipeline)
+// ตัวอย่างการนำเข้าที่ถูกต้อง
+// curl -X POST http://localhost:8080/hello \
+//      -H "Content-Type: application/json" \
+//      -d '{"name":"Somchai"}'
 import (
 	"encoding/json"
 	"fmt"
