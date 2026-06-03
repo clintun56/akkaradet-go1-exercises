@@ -6,6 +6,18 @@ import (
 	"time"
 )
 
+	// ฟังก์ชันสำหรับ Worker แต่ละตัว
+func worker(id int, jobs <-chan int, wg *sync.WaitGroup) {
+	// เสร็จแล้ว
+	defer wg.Done()
+
+	// วนลูปรับงานจาก Channel จนกว่า Channel จะถูกปิด
+	for job := range jobs {
+		fmt.Printf("Worker [%d] processing job [%d]\n", id, job)
+		// จำลองการทำงานด้วยการ Sleep 1 วินาที
+		time.Sleep(time.Second)
+	}
+}
 
 func RunWorkers(numWorkers int, numJobs int) {
 	jobs := make(chan int, numJobs) // สร้าง Channel สำหรับส่งงาน
@@ -28,21 +40,6 @@ func RunWorkers(numWorkers int, numJobs int) {
 	// 4. รอให้ทุก Worker ทำงานในคิวของตัวเองจนเสร็จ (wg.Done จนครบ)
 	wg.Wait()
 }
-
-	// ฟังก์ชันสำหรับ Worker แต่ละตัว
-func worker(id int, jobs <-chan int, wg *sync.WaitGroup) {
-	// เสร็จแล้ว
-	defer wg.Done()
-
-	// วนลูปรับงานจาก Channel จนกว่า Channel จะถูกปิด
-	for job := range jobs {
-		fmt.Printf("Worker [%d] processing job [%d]\n", id, job)
-		// จำลองการทำงานด้วยการ Sleep 1 วินาที
-		time.Sleep(time.Second)
-	}
-}
-
-
 
 func main() {
 	numWorkers := 3

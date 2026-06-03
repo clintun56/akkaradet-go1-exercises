@@ -1,5 +1,5 @@
 package basicconcurrencyworkerpool
-
+// "Interface (อินเตอร์เฟส)" หน้าที่หลักของโค้ดชุดนี้คือ "การออกแบบระบบให้สามารถคำนวณและแสดงผลพื้นที่ของรูปทรงอะไรก็ได้ (เช่น สี่เหลี่ยม, วงกลม) โดยใช้ฟังก์ชันแสดงผลร่วมกันเพียงฟังก์ชันเดียว (PrintArea)"
 import (
 	"fmt"
 	"math"
@@ -10,7 +10,7 @@ type Shape interface {
 	Area() float64
 }
 
-// 2. สร้าง Struct สำหรับ Rectangle และ Circle
+// 2. สร้าง Struct สำหรับ Rectangle สีเหลียม และ Circle วงกลม
 type Rectangle struct {
 	Width  float64
 	Height float64
